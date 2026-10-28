@@ -1,0 +1,66 @@
+{% extends "studio/base.html" %}
+{% block content %}
+<section class="hero">
+  <div class="slides" id="slides">
+    {% for s in slides %}<div class="slide" style="background-image:url('{{ s.image.url }}')" data-cap="{{ s.caption }}"></div>
+    {% empty %}<div class="slide g1" data-cap="Lagos Events"></div><div class="slide g2" data-cap="Portraits &amp; Fashion"></div><div class="slide g3" data-cap="Corporate &amp; Architecture"></div>{% endfor %}
+  </div>
+  <canvas id="scene" aria-hidden="true"></canvas>
+  <div class="dots" id="dots"></div><p class="caption" id="caption"></p>
+  <div class="hero-text">
+    <p class="live"><i></i> Live &middot; Lagos <span id="clock"></span></p>
+    <p class="eyebrow">Photography &amp; Videography &bull; Lagos</p>
+    <h1 aria-label="We frame the moments that define you."><span id="type">We frame the moments</span><span class="cursor" aria-hidden="true"></span><br><span class="after" id="after">that <em>define</em> you.</span></h1>
+    <p class="lead">Events, portraits, brands and spaces, captured with cinematic precision.</p>
+    <div class="cta"><a class="btn" href="#contact">Book a Shoot</a><a class="btn ghost" href="#work">View Work</a></div>
+  </div>
+</section>
+
+<section class="wrap" id="work">
+  <h2 class="reveal">What we shoot</h2>
+  <div class="cards">
+    {% for c in nav_categories %}
+    <a href="{{ c.get_absolute_url }}" class="card tilt reveal"><span class="num">0{{ forloop.counter }}</span><h3>{{ c.title }}</h3><p>{{ c.tagline }}</p></a>
+    {% endfor %}
+  </div>
+</section>
+
+{% if featured %}
+<section class="wrap"><h2 class="reveal">Featured work</h2>
+  <div class="gallery" id="gallery" data-cat="">
+    {% for p in featured %}
+    <figure class="shot reveal" data-id="{{ p.id }}" {% if p.image %}data-full="{{ p.image.url }}"{% endif %}>
+      {% if p.image %}<img src="{{ p.image.url }}" alt="{{ p.title }}" loading="lazy">{% else %}<div class="ph"></div>{% endif %}
+      <figcaption>{{ p.category }} &middot; {{ p.title }}</figcaption>
+    </figure>{% endfor %}
+  </div>
+</section>
+{% endif %}
+
+<section class="wrap stats">
+  <div class="reveal"><b data-count="500">0</b><span>Shoots delivered</span></div>
+  <div class="reveal"><b data-count="6">0</b><span>Specialties</span></div>
+  <div class="reveal"><b data-count="100">0</b><span>% Dedication</span></div>
+</section>
+
+{% if companies or vendors %}
+<section class="wrap"><h2 class="reveal">Trusted by companies &amp; vendors</h2>
+  <div class="logos reveal">
+    {% for c in companies %}{% include "studio/_client.html" %}{% endfor %}
+    {% for c in vendors %}{% include "studio/_client.html" %}{% endfor %}
+  </div>
+</section>
+{% endif %}
+
+<section class="wrap contact" id="contact">
+  <div class="reveal"><h2>Let's create together</h2>
+    <p>Tell us about your event, brand or idea. Reach us instantly on WhatsApp or Gmail, or send the form.</p>
+    <div class="cta"><a class="btn" href="{{ wa_link }}" target="_blank" rel="noopener">WhatsApp Us</a><a class="btn ghost" href="{{ gmail_link }}" target="_blank" rel="noopener">Email Us</a></div>
+    <p class="muted">{{ studio.address }}</p>
+  </div>
+  <form method="post" action="{% url 'contact' %}" class="form reveal" id="contact-form" data-wa="{{ studio.whatsapp }}">{% csrf_token %}
+    {{ form.name }}{{ form.email }}{{ form.phone }}{{ form.service }}{{ form.message }}
+    <div class="cta"><button class="btn" type="submit">Send to Email</button><button class="btn wa" type="button" id="wa-btn">Send on WhatsApp</button></div><p class="status" id="status" role="status"></p>
+  </form>
+</section>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "studio/base.html" %}
+{% block title %}{{ cat.title }} | Chuddy Media{% endblock %}
+{% block content %}
+<section class="page-head"><p class="eyebrow">Portfolio</p><h1>{{ cat.title }}</h1><p class="lead">{{ cat.tagline }}</p></section>
+<section class="wrap">
+  <div class="gallery" id="gallery" data-cat="{{ cat.slug }}">
+    {% for p in projects %}
+    <figure class="shot reveal" data-id="{{ p.id }}" {% if p.video %}data-video="{{ p.video.url }}"{% elif p.image %}data-full="{{ p.image.url }}"{% endif %}>
+      {% if p.video %}<video src="{{ p.video.url }}" muted loop playsinline preload="metadata"{% if p.image %} poster="{{ p.image.url }}"{% endif %}></video><span class="play">&#9654;</span>{% elif p.image %}<img src="{{ p.image.url }}" alt="{{ p.title }}" loading="lazy">{% else %}<div class="ph"></div>{% endif %}
+      <figcaption>{{ p.title }}{% if p.video_url %} &middot; <a href="{{ p.video_url }}" target="_blank" rel="noopener">Watch</a>{% endif %}</figcaption>
+    </figure>
+    {% empty %}<p class="muted">New work is being added. <a href="{% url 'home' %}#contact">Book your shoot</a>.</p>{% endfor %}
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "studio/base.html" %}
+{% block title %}About | Chuddy Media{% endblock %}
+{% block content %}
+<section class="page-head"><p class="eyebrow">About</p><h1>The eye behind Chuddy Media</h1></section>
+<section class="wrap about">
+  <div class="reveal">
+    <h2>Bio: MD / CEO</h2>
+    <p>Chuddy Media is a Lagos-based photography and videography studio led by its Managing Director and CEO, whose passion for visual storytelling drives every frame we deliver.</p>
+    <p>From vibrant events and editorial photoshoots to corporate coverage, architecture, modeling and product campaigns, we combine technical precision with a creative eye so every client receives imagery that is polished, memorable and made to perform.</p>
+    <p>Our promise is simple: professional service, on-time delivery and visuals you will be proud to share.</p>
+    <p class="muted">Add the CEO's full name and photo through your admin or this template.</p>
+  </div>
+  <aside class="panel reveal">
+    <h3>Studio details</h3>
+    <p>{{ studio.address }}</p>
+    {% for p in studio.phones %}<p><a href="tel:{{ p }}">{{ p }}</a></p>{% endfor %}
+    <p><a href="{{ gmail_link }}" target="_blank" rel="noopener">{{ studio.email }}</a></p>
+    <p>Instagram: <a href="{{ studio.social.instagram }}" target="_blank" rel="noopener">@oscarchuddy</a></p>
+    <a class="btn" href="{{ wa_link }}" target="_blank" rel="noopener">Chat on WhatsApp</a>
+  </aside>
+</section>
+{% endblock %}

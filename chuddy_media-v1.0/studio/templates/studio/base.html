@@ -1,0 +1,66 @@
+{% load static %}<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{% block title %}Chuddy Media | Photography & Videography, Lagos{% endblock %}</title>
+<meta name="description" content="Chuddy Media is a Lagos photography and videography studio for events, photoshoots, corporate, architecture, modeling and product work.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/main.css' %}">
+<script>document.documentElement.classList.add("js")</script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="i-wa" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></symbol>
+<symbol id="i-fb" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></symbol>
+<symbol id="i-ig" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.4" cy="6.6" r="1.3"/></symbol>
+<symbol id="i-tt" viewBox="0 0 24 24"><path d="M15.5 3v11a4 4 0 11-4-4M15.5 3c.4 2.6 2.2 4.4 5 4.6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="i-x" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></symbol>
+<symbol id="i-yt" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></symbol>
+<symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3.5 7.5l8.5 6 8.5-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+<symbol id="i-share" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="18" cy="5" r="2.8"/><circle cx="6" cy="12" r="2.8"/><circle cx="18" cy="19" r="2.8"/><path d="M8.5 10.7l7-4.1M8.5 13.3l7 4.1"/></g></symbol>
+</svg>
+
+<div class="progress" id="progress"></div>
+<header id="header" class="header">
+  <a href="{% url 'home' %}" class="logo">Chuddy<span>Media</span></a>
+  <button class="burger" aria-label="Menu" aria-expanded="false"><i></i><i></i></button>
+  <nav id="nav">
+    {% for c in nav_categories %}<a href="{{ c.get_absolute_url }}">{{ c.title }}</a>{% endfor %}
+    <a href="{% url 'about' %}">About</a>
+    <button class="linkbtn" data-open="social">Connect</button>
+    <a href="{% url 'home' %}#contact" class="btn small">Book Now</a>
+  </nav>
+</header>
+{% if messages %}<div class="toasts">{% for m in messages %}<div class="toast {{ m.tags }}">{{ m }}</div>{% endfor %}</div>{% endif %}
+<main>{% block content %}{% endblock %}</main>
+<footer class="footer">
+  <div class="wrap grid3">
+    <div><a href="{% url 'home' %}" class="logo">Chuddy<span>Media</span></a><p>{{ studio.tagline }}. Moments crafted into timeless visuals.</p></div>
+    <div><h4>Contact</h4><p>{{ studio.address }}</p>
+      {% for p in studio.phones %}<p><a href="tel:{{ p }}">{{ p }}</a></p>{% endfor %}
+      <p><a href="{{ gmail_link }}" target="_blank" rel="noopener">{{ studio.email }}</a></p></div>
+    <div><h4>Follow</h4><p>Find us on every platform.</p><button class="btn ghost small" data-open="social">Connect with us</button></div>
+  </div>
+  <p class="copy">&copy; {% now "Y" %} Chuddy Media. All rights reserved.</p>
+</footer>
+<div class="fab">
+  <button class="fab-social" data-open="social" aria-label="Open social media"><svg class="ico"><use href="#i-share"/></svg><span class="tip">Social media</span></button>
+  <a class="fab-wa" href="{{ wa_link }}?text=Hello%20Chuddy%20Media" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg class="ico"><use href="#i-wa"/></svg><span class="tip">Chat on WhatsApp</span></a>
+</div>
+<div class="modal" id="social" hidden><div class="modal-box" role="dialog" aria-label="Connect with us">
+  <button class="close" data-close aria-label="Close">&times;</button>
+  <p class="eyebrow">Let's connect</p><h3>Find Chuddy Media everywhere</h3><p class="muted">Tap a platform to reach us instantly.</p>
+  <div class="tiles">
+  <a class="tile wide" style="--c:#25d366;--i:1" href="{{ wa_link }}?text=Hello%20Chuddy%20Media" target="_blank" rel="noopener"><span class="ti"><svg class="ico"><use href="#i-wa"/></svg></span><span class="tx"><b>WhatsApp</b><small>{{ studio.phones.0 }}</small></span></a>
+  <a class="tile wide" style="--c:#ea4335;--i:2" href="{{ gmail_link }}" target="_blank" rel="noopener"><span class="ti"><svg class="ico"><use href="#i-mail"/></svg></span><span class="tx"><b>Gmail</b><small>{{ studio.email }}</small></span></a>
+  {% if social.facebook %}<a class="tile" style="--c:#1877f2;--i:3" href="{{ social.facebook }}" target="_blank" rel="noopener"><span class="ti"><svg class="ico"><use href="#i-fb"/></svg></span><span class="tx"><b>Facebook</b><small>Follow us</small></span></a>{% endif %}
+  {% if social.instagram %}<a class="tile" style="--c:#e1306c;--i:4" href="{{ social.instagram }}" target="_blank" rel="noopener"><span class="ti"><svg class="ico"><use href="#i-ig"/></svg></span><span class="tx"><b>Instagram</b><small>@oscarchuddy</small></span></a>{% endif %}
+  {% if social.tiktok %}<a class="tile" style="--c:#fe2c55;--i:5" href="{{ social.tiktok }}" target="_blank" rel="noopener"><span class="ti"><svg class="ico"><use href="#i-tt"/></svg></span><span class="tx"><b>TikTok</b><small>Watch us</small></span></a>{% endif %}
+  {% if social.x %}<a class="tile" style="--c:#3a3a42;--i:6" href="{{ social.x }}" target="_blank" rel="noopener"><span class="ti"><svg class="ico"><use href="#i-x"/></svg></span><span class="tx"><b>X</b><small>Follow us</small></span></a>{% endif %}
+  {% if social.youtube %}<a class="tile" style="--c:#ff0000;--i:7" href="{{ social.youtube }}" target="_blank" rel="noopener"><span class="ti"><svg class="ico"><use href="#i-yt"/></svg></span><span class="tx"><b>YouTube</b><small>Subscribe</small></span></a>{% endif %}
+  </div></div></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="{% static 'js/main.js' %}"></script>
+<script src="{% static 'js/app.js' %}"></script>
+</body></html>
